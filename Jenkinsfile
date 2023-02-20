@@ -14,7 +14,13 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t springpetclinic:latest .'
+                    withCredentials([string(credentialsId: 'jfrogartifactorycredentials', variable: 'jfrogartifactorypwd')]) {
+                        sh 'docker build -t springpetclinic:latest .'
+                        sh 'docker login -u mansiboriya@gmail.com -p ${jfrogartifactorypwd} projectjfrog.jfrog.io'
+                        sh 'docker tag springpetclinic:latest projectjfrog.jfrog.io/docker/springpetclinic:latest'
+                        sh 'docker push projectjfrog.jfrog.io/docker/springpetclinic:latest'
+
+                    }
                 }
             }
         }
