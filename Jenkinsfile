@@ -14,6 +14,7 @@ pipeline {
                 sh 'docker run springpetclinic:test'
             }
         }
+        
         stage('Build & Push to JFrog'){
             steps{
                 script{
