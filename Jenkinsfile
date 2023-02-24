@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    tools{
-        maven '3.9.0'
-    }
     stages{
         stage('Get Code and Build App'){
             steps{
@@ -14,7 +11,7 @@ pipeline {
                 sh 'docker run springpetclinic:test'
             }
         }
-        
+
         stage('Build & Push to JFrog'){
             steps{
                 script{
