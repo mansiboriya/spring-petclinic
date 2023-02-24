@@ -16,7 +16,7 @@ The application will run in port 8080
 - Pipeline uses Jenkinsfile in this repo
     - Stage 1 - Compile and Run tests
     - Stage 2 - Build the image and push to JFrog Artifactory
-- Jenkins Server - http://projectjfrog.com.
+- Jenkins Server - https://projectjfrog.com.
 - Use credentials shared in the email to login to Jenkins Application.
 
 ## 3. Jenkins Server
@@ -33,16 +33,16 @@ docker login -u mansiboriya@gmail.com -p {JFROG_ARTIFACTORY_TOKEN_FROM_EMAIL} pr
 ```
 2. Pull the image from JFrog Artifactory
 ```sh
-docker pull http://projectjfrog.jfrog.io/docker-local/springpetclinic:latest
+docker pull https://projectjfrog.jfrog.io/docker-local/springpetclinic:latest
 ```
 3. Run the image
 ```sh
-docker run -p 127.0.0.1:8080:8080 http://projectjfrog.jfrog.io/docker-local/springpetclinic:latest
+docker run -p 127.0.0.1:8080:8080 https://projectjfrog.jfrog.io/docker-local/springpetclinic:latest
 ```
 
 ## Notes
 Required Credential
-- Jenkins (http://projectjfrog.com)
+- Jenkins (https://projectjfrog.com)
     - Username
     - Password
 - JFrog Artifactory
